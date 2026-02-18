@@ -39,6 +39,54 @@
         <div id="overlay" class="overlay show">
           <h2 id="overlayTitle">Snake Rush</h2>
           <p id="overlayText">Clique em jogar para começar. Use setas ou WASD para se mover.</p>
+          <div class="overlay-actions">
+            <button id="startBtn" class="btn">Jogar</button>
+            <button id="saveScoreBtn" class="btn ghost hidden">Salvar no ranking</button>
+          </div>
+          <div id="nameForm" class="name-form hidden">
+            <input id="playerName" maxlength="18" placeholder="Seu nome" />
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-grid">
+        <article class="legend-card">
+          <h3>Itens & Pontos</h3>
+          <ul>
+            <li><span class="dot normal"></span>Normal: +10 pontos</li>
+            <li><span class="dot turbo"></span>Turbo: +25 pontos e cresce +2</li>
+            <li><span class="dot danger"></span>Raro: +40 pontos</li>
+            <li><span class="dot bonus"></span>Bônus dourado: +80 pontos</li>
+          </ul>
+        </article>
+
+        <article class="legend-card">
+          <h3>Powerups bons (3)</h3>
+          <ul>
+            <li><span class="dot good1"></span>Freeze: deixa o jogo mais lento por 5s</li>
+            <li><span class="dot good2"></span>Shield: ignora 1 colisão por 6s</li>
+            <li><span class="dot good3"></span>Grow+: aumenta +2 segmentos</li>
+          </ul>
+        </article>
+
+        <article class="legend-card">
+          <h3>Powerups ruins (3)</h3>
+          <ul>
+            <li><span class="dot bad1"></span>Bomba: remove 2 segmentos</li>
+            <li><span class="dot bad2"></span>Speed+: acelera demais por 4s</li>
+            <li><span class="dot bad3"></span>Invert: inverte controles por 4s</li>
+          </ul>
+        </article>
+
+        <article class="leaderboard-card">
+          <h3>🏆 Leaderboard</h3>
+          <ol id="leaderboardList"></ol>
+        </article>
+      </section>
+
+      <section class="quick-actions">
+        <button id="restartBtn" class="pill pill-btn">🔁 Reiniciar</button>
+      </section>
           <button id="startBtn" class="btn">Jogar</button>
         </div>
       </section>
@@ -57,6 +105,11 @@
           <button data-dir="right" class="arrow">▶</button>
         </div>
       </section>
+
+      <p class="credits">
+        Desenvolvido por Angelo Suriani ·
+        <a href="https://github.com/angelosuriani" target="_blank" rel="noreferrer">GitHub</a>
+      </p>
     </main>
 
     <script src="script.js"></script>
