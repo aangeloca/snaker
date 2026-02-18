@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Rush</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="brand">
+          <h1>🐍 Snake Rush</h1>
+          <p>Coma, evolua e sobreviva ao ritmo acelerado.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <span>Pontuação</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>Recorde</span>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>Nível</span>
+            <strong id="level">1</strong>
+          </div>
+          <div class="stat-card">
+            <span>Combo</span>
+            <strong id="combo">x1</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="board-wrap">
+        <canvas id="board" width="560" height="560" aria-label="Campo do jogo Snake"></canvas>
+        <div id="overlay" class="overlay show">
+          <h2 id="overlayTitle">Snake Rush</h2>
+          <p id="overlayText">Clique em jogar para começar. Use setas ou WASD para se mover.</p>
+          <button id="startBtn" class="btn">Jogar</button>
+        </div>
+      </section>
+
+      <footer class="controls">
+        <div class="pill">🎮 Setas / WASD</div>
+        <div class="pill">⏸ Espaço pausa</div>
+        <div class="pill">🔁 R reinicia</div>
+      </footer>
+
+      <section class="mobile-controls" aria-label="Controles para celular">
+        <button data-dir="up" class="arrow">▲</button>
+        <div class="middle-row">
+          <button data-dir="left" class="arrow">◀</button>
+          <button data-dir="down" class="arrow">▼</button>
+          <button data-dir="right" class="arrow">▶</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
