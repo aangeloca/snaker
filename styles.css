@@ -200,6 +200,12 @@ body {
 .bad2 { background: #ff8f3f; }
 .bad3 { background: #cf84ff; }
 
+
+.quick-actions {
+  display: flex;
+  gap: 10px;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
