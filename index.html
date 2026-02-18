@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Rush</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="brand">
+          <h1>🐍 Snake Rush</h1>
+          <p>Coma, evolua e sobreviva ao ritmo acelerado.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <span>Pontuação</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>Recorde</span>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>Nível</span>
+            <strong id="level">1</strong>
+          </div>
+          <div class="stat-card">
+            <span>Combo</span>
+            <strong id="combo">x1</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="board-wrap">
+        <canvas id="board" width="560" height="560" aria-label="Campo do jogo Snake"></canvas>
+        <div id="overlay" class="overlay show">
+          <h2 id="overlayTitle">Snake Rush</h2>
+          <p id="overlayText">Clique em jogar para começar. Use setas ou WASD para se mover.</p>
+          <div class="overlay-actions">
+            <button id="startBtn" class="btn">Jogar</button>
+            <button id="saveScoreBtn" class="btn ghost hidden">Salvar no ranking</button>
+          </div>
+          <div id="nameForm" class="name-form hidden">
+            <input id="playerName" maxlength="18" placeholder="Seu nome" />
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-grid">
+        <article class="legend-card">
+          <h3>Itens & Pontos</h3>
+          <ul>
+            <li><span class="dot normal"></span>Normal: +10 pontos</li>
+            <li><span class="dot turbo"></span>Turbo: +25 pontos e cresce +2</li>
+            <li><span class="dot danger"></span>Raro: +40 pontos</li>
+            <li><span class="dot bonus"></span>Bônus dourado: +80 pontos</li>
+          </ul>
+        </article>
+
+        <article class="legend-card">
+          <h3>Powerups bons (3)</h3>
+          <ul>
+            <li><span class="dot good1"></span>Freeze: deixa o jogo mais lento por 5s</li>
+            <li><span class="dot good2"></span>Shield: ignora 1 colisão por 6s</li>
+            <li><span class="dot good3"></span>Grow+: aumenta +2 segmentos</li>
+          </ul>
+        </article>
+
+        <article class="legend-card">
+          <h3>Powerups ruins (3)</h3>
+          <ul>
+            <li><span class="dot bad1"></span>Bomba: remove 2 segmentos</li>
+            <li><span class="dot bad2"></span>Speed+: acelera demais por 4s</li>
+            <li><span class="dot bad3"></span>Invert: inverte controles por 4s</li>
+          </ul>
+        </article>
+
+        <article class="leaderboard-card">
+          <h3>🏆 Leaderboard</h3>
+          <ol id="leaderboardList"></ol>
+        </article>
+      </section>
+
+      <section class="quick-actions">
+        <button id="restartBtn" class="pill pill-btn">🔁 Reiniciar</button>
+      </section>
+
+      <footer class="controls">
+        <div class="pill">🎮 Setas / WASD</div>
+        <div class="pill">⏸ Espaço pausa</div>
+        <div class="pill">🔁 R reinicia</div>
+      </footer>
+
+      <section class="mobile-controls" aria-label="Controles para celular">
+        <button data-dir="up" class="arrow">▲</button>
+        <div class="middle-row">
+          <button data-dir="left" class="arrow">◀</button>
+          <button data-dir="down" class="arrow">▼</button>
+          <button data-dir="right" class="arrow">▶</button>
+        </div>
+      </section>
+
+      <p class="credits">
+        Desenvolvido por Angelo Suriani ·
+        <a href="https://github.com/angelosuriani" target="_blank" rel="noreferrer">GitHub</a>
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
